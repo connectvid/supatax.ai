@@ -2,38 +2,40 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Calculator, FileText, BookOpen, Sparkles } from "lucide-react";
+import { Menu, Sparkles, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navigation = [
-  { name: "Tools", href: "/all-tools", icon: Calculator },
-  { name: "Tax Guides", href: "/blog", icon: BookOpen },
-  { name: "Calculators", href: "/#calculators", icon: Calculator },
-  { name: "About", href: "/about-us", icon: FileText },
+  { name: "Tools", href: "/all-tools" },
+  { name: "Tax Guides", href: "/blog" },
+  { name: "Calculators", href: "/#calculators" },
+  { name: "About", href: "/about-us" },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+            <Sparkles className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl font-bold">Supatax</span>
+          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Supatax
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
               {item.name}
             </Link>
@@ -42,8 +44,16 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
+          <Link href="/login">
+            <Button variant="ghost" size="sm" className="text-slate-600">
+              <User className="h-4 w-4 mr-2" />
+              Sign In
+            </Button>
+          </Link>
           <Link href="/all-tools">
-            <Button>Explore Tools</Button>
+            <Button size="sm" className="bg-slate-900 hover:bg-slate-800">
+              Explore Tools
+            </Button>
           </Link>
         </div>
 
@@ -62,15 +72,21 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 text-lg font-medium"
+                  className="text-lg font-medium text-slate-600 hover:text-slate-900"
                 >
-                  <item.icon className="h-5 w-5" />
                   {item.name}
                 </Link>
               ))}
-              <Link href="/all-tools" onClick={() => setIsOpen(false)}>
-                <Button className="w-full">Explore Tools</Button>
-              </Link>
+              <div className="pt-4 border-t space-y-3">
+                <Link href="/login" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link href="/all-tools" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-slate-900">Explore Tools</Button>
+                </Link>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
