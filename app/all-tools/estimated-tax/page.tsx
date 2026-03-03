@@ -156,7 +156,7 @@ export default function EstimatedTaxCalculatorTool() {
             <p>You won't owe an underpayment penalty if you meet one of these tests:</p>
             <ul>
               <li><strong>90% Current Year:</strong> You owe less than $1,000 in tax after subtracting withholding and credits</li>
-              <li><strong>100% Prior Year:</strong> You paid at least 100% of prior year tax liability (110% if AGI > $150,000)</li>
+              <li><strong>100% Prior Year:</strong> You paid at least 100% of prior year tax liability (110% if AGI {'>'} $150,000)</li>
               <li><strong>Annualized Income:</strong> You paid at least 90% of current year tax based on annualized income</li>
             </ul>
           </div>
