@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navigation = [
-  { name: "Tools", href: "/all-tools" },
-  { name: "Tax Guides", href: "/blog" },
-  { name: "Calculators", href: "/#calculators" },
+  { name: "AI Tools", href: "/all-tools" },
+  { name: "Tax Research", href: "/tax-research" },
+  { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about-us" },
 ];
 
@@ -50,9 +50,9 @@ export function Header() {
               Sign In
             </Button>
           </Link>
-          <Link href="/all-tools">
+          <Link href="/signup">
             <Button size="sm" className="bg-slate-900 hover:bg-slate-800">
-              Explore Tools
+              Start Free Trial
             </Button>
           </Link>
         </div>
@@ -83,8 +83,8 @@ export function Header() {
                     Sign In
                   </Button>
                 </Link>
-                <Link href="/all-tools" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-slate-900">Explore Tools</Button>
+                <Link href="/signup" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-slate-900">Start Free Trial</Button>
                 </Link>
               </div>
             </div>

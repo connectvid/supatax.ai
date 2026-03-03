@@ -2,20 +2,22 @@ import Link from "next/link";
 import { Sparkles, Github, Twitter, Mail } from "lucide-react";
 
 const footerLinks = {
-  tools: [
-    { name: "Paystub Generator", href: "/all-tools/paystub-generator" },
-    { name: "Cover Letter Generator", href: "/all-tools/cover-letter-generator" },
+  product: [
+    { name: "AI Tax Research", href: "/tax-research" },
+    { name: "Client Letters", href: "/all-tools/client-letter-generator" },
     { name: "Tax Calculators", href: "/all-tools" },
+    { name: "IRS Notice Response", href: "/all-tools/irs-notice-response" },
     { name: "All AI Tools", href: "/all-tools" },
   ],
   resources: [
-    { name: "Tax Software Reviews", href: "/tax-software" },
-    { name: "Self-Employment Tax", href: "/self-employment-tax" },
-    { name: "Tax Deductions Guide", href: "/small-business-tax-deductions" },
-    { name: "FreeTaxUSA Review", href: "/freetaxusa-review" },
+    { name: "Tax Code Research", href: "/tax-research" },
+    { name: "IRS Publications", href: "/irs-publications" },
+    { name: "Tax Law Updates", href: "/tax-law-updates" },
+    { name: "Practice Guides", href: "/practice-guides" },
   ],
   company: [
     { name: "About Us", href: "/about-us" },
+    { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact-us" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Service", href: "/terms-conditions" },
@@ -38,7 +40,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-slate-500 max-w-sm mb-6 leading-relaxed">
-              AI-powered tax tools and expert guides for freelancers, 1099 contractors, and self-employed professionals. File with confidence.
+              AI-powered tax research and document generation for CPAs, Enrolled Agents, 
+              and tax professionals. Deliver higher-value client service.
             </p>
             <div className="flex gap-4">
               <Link
@@ -65,11 +68,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Tools */}
+          {/* Product */}
           <div>
-            <h3 className="font-semibold mb-4 text-slate-900">AI Tools</h3>
+            <h3 className="font-semibold mb-4 text-slate-900">Product</h3>
             <ul className="space-y-3">
-              {footerLinks.tools.map((link) => (
+              {footerLinks.product.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -84,7 +87,7 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4 text-slate-900">Tax Guides</h3>
+            <h3 className="font-semibold mb-4 text-slate-900">Resources</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -123,7 +126,7 @@ export function Footer() {
             © {new Date().getFullYear()} Supatax.ai. All rights reserved.
           </p>
           <p className="text-sm text-slate-400">
-            Not tax advice. Consult a professional for your specific situation.
+            Not a substitute for professional tax advice. Consult regulations for your jurisdiction.
           </p>
         </div>
       </div>
