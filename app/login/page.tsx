@@ -41,7 +41,7 @@ export default function LoginPage() {
               </div>
               <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
               <CardDescription>
-                Sign in to access your saved tools and history
+                Sign in to access your tax research workspace
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -77,7 +77,7 @@ export default function LoginPage() {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="name@example.com"
+                      placeholder="name@firm.com"
                       className="pl-10"
                     />
                   </div>
@@ -113,15 +113,8 @@ export default function LoginPage() {
               <div className="text-center text-sm">
                 <span className="text-slate-600">Don't have an account? </span>
                 <Link href="/signup" className="text-blue-600 hover:text-blue-700 font-medium">
-                  Sign up
+                  Start free trial
                 </Link>
-              </div>
-
-              {/* Note */}
-              <div className="text-center text-xs text-slate-400 pt-4 border-t">
-                <p>
-                  Note: Signup is optional. All tools are available without an account.
-                </p>
               </div>
             </CardContent>
           </Card>

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Sparkles, Mail, Lock, User, Github, Chrome, ArrowLeft } from "lucide-react";
+import { Sparkles, Mail, Lock, User, Building2, Github, Chrome, ArrowLeft } from "lucide-react";
 
 export default function SignupPage() {
   return (
@@ -39,9 +39,9 @@ export default function SignupPage() {
               <div className="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4">
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
-              <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
+              <CardTitle className="text-2xl font-bold">Start your free trial</CardTitle>
               <CardDescription>
-                Join thousands of freelancers using our free AI tools
+                Join tax professionals using AI to deliver better client service
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -77,21 +77,35 @@ export default function SignupPage() {
                     <Input
                       id="name"
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="John Smith, CPA"
+                      className="pl-10"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium" htmlFor="firm">
+                    Firm Name (Optional)
+                  </label>
+                  <div className="relative">
+                    <Building2 className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                    <Input
+                      id="firm"
+                      type="text"
+                      placeholder="Smith & Associates"
                       className="pl-10"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium" htmlFor="email">
-                    Email
+                    Work Email
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                     <Input
                       id="email"
                       type="email"
-                      placeholder="name@example.com"
+                      placeholder="john@firm.com"
                       className="pl-10"
                     />
                   </div>
@@ -110,11 +124,11 @@ export default function SignupPage() {
                     />
                   </div>
                   <p className="text-xs text-slate-400">
-                    Must be at least 8 characters long
+                    Must be at least 8 characters
                   </p>
                 </div>
                 <Button type="submit" className="w-full bg-slate-900 hover:bg-slate-800">
-                  Create Account
+                  Start 14-Day Free Trial
                 </Button>
               </form>
 
